@@ -1,0 +1,16 @@
+services:
+  postgres:
+    container_name: forum-api-postgres
+    image: postgres:alpine
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: forum
+      PGDATA: /data/postgres
+    volumes:
+      - postgres-data:/data/postgres
+
+volumes:
+  postgres-data: {}
